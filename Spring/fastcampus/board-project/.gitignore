@@ -346,3 +346,4 @@ gradle-app.setting
 application.yml
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,intellij+all,intellij+iml,java,gradle,windows,macos
+data.sql
