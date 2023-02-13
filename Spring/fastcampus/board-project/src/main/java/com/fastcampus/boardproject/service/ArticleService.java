@@ -3,7 +3,6 @@ package com.fastcampus.boardproject.service;
 import com.fastcampus.boardproject.domain.Article;
 import com.fastcampus.boardproject.domain.type.SearchType;
 import com.fastcampus.boardproject.dto.ArticleDto;
-import com.fastcampus.boardproject.dto.ArticleUpdateDto;
 import com.fastcampus.boardproject.dto.ArticleWithCommentsDto;
 import com.fastcampus.boardproject.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
@@ -72,4 +71,5 @@ public class ArticleService {
     public void deleteArticle(long articleId) {
         articleRepository.deleteById(articleId);
     }
+
 }
