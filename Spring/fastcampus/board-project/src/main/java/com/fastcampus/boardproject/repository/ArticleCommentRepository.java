@@ -1,8 +1,6 @@
 package com.fastcampus.boardproject.repository;
 
-import com.fastcampus.boardproject.domain.Article;
 import com.fastcampus.boardproject.domain.ArticleComment;
-import com.fastcampus.boardproject.domain.QArticle;
 import com.fastcampus.boardproject.domain.QArticleComment;
 import com.querydsl.core.types.dsl.DateTimeExpression;
 import com.querydsl.core.types.dsl.StringExpression;
@@ -21,6 +19,7 @@ public interface ArticleCommentRepository extends
         QuerydslBinderCustomizer<QArticleComment> {
 
     List<ArticleComment> findByArticle_Id(Long articleId);
+    void deleteByIdAndUserAccount_UserId(Long articleCommentId, String userId);
 
     @Override
     default void customize(QuerydslBindings bindings, QArticleComment root) {
@@ -30,4 +29,5 @@ public interface ArticleCommentRepository extends
         bindings.bind(root.createdAt).first(DateTimeExpression::eq);
         bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase);
     }
+
 }
